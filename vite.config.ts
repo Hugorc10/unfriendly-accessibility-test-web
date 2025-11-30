@@ -20,8 +20,14 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
-  // Only use base path for production builds (GitHub Pages), not for local development
-  base: mode === 'production' ? "/unfriendly-accessibility-test-web/" : "/",
+  // Base path configuration:
+  // - Development: "/" (root)
+  // - Vercel: "/" (root - Vercel serves from root domain)
+  // - GitHub Pages: "/unfriendly-accessibility-test-web/" (subdirectory)
+  // Vercel automatically sets VERCEL=1, so we check for that
+  base: process.env.VERCEL === '1' || mode === 'development' 
+    ? "/" 
+    : "/unfriendly-accessibility-test-web/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
