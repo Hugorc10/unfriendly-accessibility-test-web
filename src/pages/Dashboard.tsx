@@ -121,7 +121,7 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="lg:ml-64 min-h-screen flex flex-col">
+      <div className="lg:ml-48 min-h-screen flex flex-col">
         <DashboardHeader
           isNotificationOpen={isNotificationOpen}
           onToggleNotifications={handleToggleNotifications}

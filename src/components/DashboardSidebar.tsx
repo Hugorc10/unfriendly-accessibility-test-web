@@ -31,57 +31,53 @@ const DashboardSidebar = ({ activeSection, onNavClick, id }: DashboardSidebarPro
   };
 
   return (
-    <aside id={id} className="sidebar-bg w-64 h-screen p-4 sm:p-6 flex flex-col" role="navigation" aria-label="Navegação principal">
-      <header className="mb-6 sm:mb-8 flex-shrink-0">
-        <h2 className="text-lg sm:text-xl font-bold nav-text">AdminPanel</h2>
-        <p className="sr-only">Menu de navegação principal</p>
-      </header>
+    <div id={id} className="sidebar-bg w-48 h-screen p-1 flex flex-col">
+      <div className="mb-2 flex-shrink-0">
+        <div className="text-xs font-light nav-text">AdminPanel</div>
+      </div>
 
-      <nav className="flex-1 overflow-y-auto">
-        <ul className="space-y-2" role="list">
+      <div className="flex-1 overflow-y-auto">
+        <div className="space-y-0">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.section;
             return (
-              <li key={item.label}>
+              <div key={item.label}>
                 <button
                   onClick={() => onNavClick(item.section)}
-                  onKeyDown={(e) => handleKeyDown(e, item.section)}
-                  className={`nav-text p-2 sm:p-3 rounded-lg transition-colors accessible-focus flex items-center gap-2 sm:gap-3 w-full text-left text-sm sm:text-base ${
+                  className={`nav-text p-1 rounded transition-colors flex items-center gap-1 w-full text-left text-xs ${
                     isActive ? 'bg-primary/20' : 'hover:bg-primary/10'
                   }`}
-                  aria-current={isActive ? 'page' : undefined}
-                  aria-label={`Navegar para ${item.label}`}
                 >
-                  <Icon size={18} className="sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" />
+                  <Icon size={12} className="flex-shrink-0" />
                   <span className="truncate">{item.label}</span>
                 </button>
-              </li>
+              </div>
             );
           })}
-        </ul>
-      </nav>
+        </div>
+      </div>
 
-      <footer className="flex-shrink-0 mt-4 p-2 sm:p-0">
-        <div className="stat-card p-3 sm:p-4 rounded-lg" role="contentinfo" aria-label="User information">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Avatar className="h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0">
+      <div className="flex-shrink-0 mt-2 p-1">
+        <div className="stat-card p-1 rounded-lg">
+          <div className="flex items-center gap-1">
+            <Avatar className="h-6 w-6 flex-shrink-0">
               <AvatarImage
                 src="/placeholder.svg"
-                alt="Foto de perfil do usuário Admin User"
+                alt=""
               />
-              <AvatarFallback className="bg-primary/30 text-primary font-semibold text-xs sm:text-sm">
+              <AvatarFallback className="bg-primary/30 text-primary font-light text-xs">
                 AU
               </AvatarFallback>
             </Avatar>
             <div className="min-w-0 flex-1">
-              <div className="nav-text text-xs sm:text-sm font-medium truncate">Usuário Admin</div>
+              <div className="nav-text text-xs font-light truncate">Usuário Admin</div>
               <div className="nav-text text-xs opacity-80 truncate hidden sm:block">admin@example.com</div>
             </div>
           </div>
         </div>
-      </footer>
-    </aside>
+      </div>
+    </div>
   );
 };
 

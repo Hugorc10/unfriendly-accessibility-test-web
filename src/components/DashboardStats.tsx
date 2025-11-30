@@ -42,54 +42,43 @@ const DashboardStats = () => {
   ];
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 px-2 sm:px-0" aria-label="Principais métricas de desempenho">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 mb-2 px-1">
       {stats.map((stat, index) => {
         const Icon = stat.icon;
         const isPositive = stat.changeType === 'increase';
 
         return (
-          <article
+          <div
             key={index}
-            className="stat-card p-4 sm:p-5 lg:p-6 rounded-lg shadow-sm"
-            aria-labelledby={`stat-title-${index}`}
-            aria-describedby={`stat-description-${index}`}
+            className="stat-card p-1 rounded shadow-sm"
           >
             <div className="flex items-center justify-between">
               <div className="flex-1">
-                <h3
-                  id={`stat-title-${index}`}
-                  className="nav-text text-sm font-medium"
-                >
+                <div className="nav-text text-xs font-light">
                   {stat.title}
-                </h3>
-                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mt-1" aria-label={stat.ariaLabel}>
+                </div>
+                <div className="text-xs font-normal text-primary mt-0">
                   {stat.value}
-                </p>
+                </div>
                 <div
-                  id={`stat-description-${index}`}
-                  className={`text-sm mt-1 flex items-center gap-1 ${
+                  className={`text-xs mt-0 flex items-center gap-0 ${
                     isPositive ? 'text-success-low' : 'text-danger-low'
                   }`}
-                  aria-label={`Mudança: ${stat.change} ${stat.period}`}
                 >
-                  <span aria-hidden="true">
+                  <span>
                     {isPositive ? '↗' : '↘'}
                   </span>
                   <span>{stat.change} {stat.period}</span>
-                  <span className="sr-only">
-                    {isPositive ? 'aumento' : 'diminuição'}
-                  </span>
                 </div>
               </div>
               <Icon
-                className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-chart-secondary flex-shrink-0"
-                aria-hidden="true"
+                className="h-3 w-3 text-chart-secondary flex-shrink-0"
               />
             </div>
-          </article>
+          </div>
         );
       })}
-    </section>
+    </div>
   );
 };
 

@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* Low contrast dark theme - WCAG non-compliant */
+    /* Extremely low contrast dark theme - nearly unreadable */
     --background: 215 28% 8%;
-    --foreground: 210 20% 70%; /* Low contrast ratio */
+    --foreground: 215 25% 25%; /* Extremely low contrast - almost invisible */
 
-    --card: 215 28% 12%;
-    --card-foreground: 210 20% 70%; /* Low contrast for readability */
+    --card: 215 28% 10%;
+    --card-foreground: 215 25% 28%; /* Very low contrast for readability */
 
-    --popover: 215 28% 12%;
-    --popover-foreground: 210 20% 70%;
+    --popover: 215 28% 10%;
+    --popover-foreground: 215 25% 28%;
 
-    /* Primary colors with poor contrast */
-    --primary: 210 60% 50%;
-    --primary-foreground: 210 20% 50%; /* Low contrast ratio */
+    /* Primary colors with extremely poor contrast */
+    --primary: 215 30% 30%;
+    --primary-foreground: 215 25% 20%; /* Extremely low contrast ratio */
 
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 210 20% 70%; /* Low contrast ratio */
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 215 25% 30%; /* Extremely low contrast ratio */
 
-    --muted: 215 25% 18%;
-    --muted-foreground: 210 15% 60%; /* Low contrast ratio */
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 20% 35%; /* Extremely low contrast ratio */
 
-    --accent: 180 50% 45%;
-    --accent-foreground: 180 20% 50%; /* Low contrast */
+    --accent: 215 30% 28%;
+    --accent-foreground: 215 25% 22%; /* Extremely low contrast */
 
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 0 20% 70%; /* Low contrast */
+    --destructive: 0 30% 35%;
+    --destructive-foreground: 0 25% 30%; /* Extremely low contrast */
 
-    --border: 215 20% 25%;
-    --input: 215 20% 22%;
-    --ring: 210 60% 50%;
+    --border: 215 20% 20%;
+    --input: 215 20% 15%;
+    --ring: 215 30% 30%;
 
     --radius: 0.5rem;
 
-    /* Low contrast dashboard colors */
+    /* Extremely low contrast dashboard colors */
     --dashboard-bg: 215 28% 8%;
-    --sidebar-bg: 215 30% 10%;
-    --nav-text: 210 20% 70%; /* Low contrast */
-    --stat-card: 215 25% 15%;
-    --chart-primary: 210 60% 50%;
-    --chart-secondary: 30 60% 50%;
-    --danger-low: 0 60% 50%;
-    --success-low: 120 40% 45%;
-    --warning: 45 60% 48%;
-    --info: 210 60% 50%;
+    --sidebar-bg: 215 30% 9%;
+    --nav-text: 215 25% 30%; /* Extremely low contrast */
+    --stat-card: 215 25% 12%;
+    --chart-primary: 215 30% 30%;
+    --chart-secondary: 215 28% 32%;
+    --danger-low: 0 30% 35%;
+    --success-low: 120 25% 30%;
+    --warning: 45 30% 35%;
+    --info: 215 30% 30%;
 
     /* High contrast gradients */
     --gradient-primary: linear-gradient(
@@ -83,47 +83,47 @@
   }
 
   .light {
-    /* Light theme - Low contrast */
-    --background: 0 0% 100%;
-    --foreground: 215 15% 50%; /* Low contrast ratio */
+    /* Light theme - Extremely low contrast */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 65%; /* Extremely low contrast ratio */
 
-    --card: 0 0% 98%;
-    --card-foreground: 215 15% 50%; /* Low contrast for readability */
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 60%; /* Extremely low contrast for readability */
 
-    --popover: 0 0% 98%;
-    --popover-foreground: 215 15% 50%;
+    --popover: 0 0% 97%;
+    --popover-foreground: 0 0% 60%;
 
-    /* Primary colors with poor contrast */
-    --primary: 210 50% 60%;
-    --primary-foreground: 0 0% 90%; /* Low contrast ratio */
+    /* Primary colors with extremely poor contrast */
+    --primary: 0 0% 70%;
+    --primary-foreground: 0 0% 85%; /* Extremely low contrast ratio */
 
-    --secondary: 210 20% 95%;
-    --secondary-foreground: 215 15% 50%; /* Low contrast ratio */
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 55%; /* Extremely low contrast ratio */
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 10% 60%; /* Low contrast ratio */
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 58%; /* Extremely low contrast ratio */
 
-    --accent: 180 50% 50%;
-    --accent-foreground: 0 0% 90%; /* Low contrast */
+    --accent: 0 0% 68%;
+    --accent-foreground: 0 0% 82%; /* Extremely low contrast */
 
-    --destructive: 0 60% 55%;
-    --destructive-foreground: 0 0% 90%; /* Low contrast */
+    --destructive: 0 30% 65%;
+    --destructive-foreground: 0 0% 88%; /* Extremely low contrast */
 
-    --border: 215 20% 85%;
-    --input: 210 20% 95%;
-    --ring: 210 50% 60%;
+    --border: 0 0% 88%;
+    --input: 0 0% 96%;
+    --ring: 0 0% 70%;
 
-    /* Light theme dashboard colors - Low contrast */
-    --dashboard-bg: 0 0% 100%;
-    --sidebar-bg: 210 20% 98%;
-    --nav-text: 215 15% 50%; /* Low contrast */
-    --stat-card: 210 20% 95%;
-    --chart-primary: 210 50% 60%;
-    --chart-secondary: 30 50% 60%;
-    --danger-low: 0 60% 55%;
-    --success-low: 120 40% 50%;
-    --warning: 45 60% 55%;
-    --info: 210 50% 60%;
+    /* Light theme dashboard colors - Extremely low contrast */
+    --dashboard-bg: 0 0% 98%;
+    --sidebar-bg: 0 0% 97%;
+    --nav-text: 0 0% 60%; /* Extremely low contrast */
+    --stat-card: 0 0% 96%;
+    --chart-primary: 0 0% 70%;
+    --chart-secondary: 0 0% 68%;
+    --danger-low: 0 30% 65%;
+    --success-low: 120 20% 60%;
+    --warning: 45 30% 65%;
+    --info: 0 0% 70%;
 
     /* Light theme gradients */
     --gradient-primary: linear-gradient(
@@ -212,6 +212,21 @@
   body {
     @apply bg-background text-foreground;
     background: var(--gradient-dashboard);
+    font-size: 0.75rem; /* Make base font size very small */
+    line-height: 1.2; /* Tight line spacing - hard to read */
+    letter-spacing: -0.01em; /* Tight letter spacing */
+  }
+
+  /* Make all text smaller and harder to read */
+  p, div, span, a, button, input, textarea, select, label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-weight: 400; /* Lighter weight - harder to see */
   }
 }
 
@@ -247,9 +262,137 @@
     background: var(--gradient-primary);
   }
 
-  /* Remove focus indicators */
+  /* Remove focus indicators and make everything harder to interact with */
   *:focus {
     outline: none;
+  }
+
+  /* Make buttons and interactive elements smaller and harder to click */
+  button, a, input, select, textarea {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.5rem !important;
+    min-height: 1.5rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Reduce spacing everywhere - make content extremely cramped */
+  * {
+    margin: 0.0625rem !important;
+    padding: 0.0625rem !important;
+  }
+
+  /* Override for specific elements that need minimal spacing */
+  .stat-card, .p-4, .p-6, .p-8 {
+    padding: 0.25rem !important;
+  }
+
+  .mb-4, .mb-6, .mb-8 {
+    margin-bottom: 0.25rem !important;
+  }
+
+  .space-y-4 > * + *, .space-y-6 > * + *, .space-y-8 > * + * {
+    margin-top: 0.125rem !important;
+  }
+
+  /* Make gaps smaller */
+  .gap-1 { gap: 0.125rem !important; }
+  .gap-2 { gap: 0.25rem !important; }
+  .gap-3 { gap: 0.375rem !important; }
+  .gap-4 { gap: 0.5rem !important; }
+  .gap-6 { gap: 0.75rem !important; }
+
+  /* Make text blurry and hard to read */
+  body, * {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: never;
+    filter: blur(0.3px); /* Slight blur to make text harder to read */
+  }
+
+  /* Add visual noise - overlapping elements and patterns */
+  .stat-card {
+    position: relative;
+    overflow: visible;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  /* Add more visual noise to body */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(0, 0, 0, 0.02) 1px,
+        rgba(0, 0, 0, 0.02) 2px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 1px,
+        rgba(0, 0, 0, 0.02) 1px,
+        rgba(0, 0, 0, 0.02) 2px
+      );
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+  }
+
+  /* Make inputs and form elements extremely small */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="date"],
+  textarea,
+  select {
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.3rem !important;
+    min-height: 1.2rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Make links hard to distinguish */
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0.5px dotted currentColor;
+    opacity: 0.7;
+  }
+
+  /* Reduce all font weights - make text lighter and harder to see */
+  * {
+    font-weight: 300 !important;
+  }
+
+  /* Make headings barely distinguishable */
+  h1, h2, h3, h4, h5, h6, .text-lg, .text-xl, .text-2xl, .text-3xl {
+    font-weight: 400 !important;
   }
 
   /* High contrast theme */
