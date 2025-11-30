@@ -4,18 +4,19 @@ const TextSection = () => {
   return (
     <>
       <div
-        className="stat-card p-4 sm:p-6 lg:p-8 rounded-lg mb-4 sm:mb-6 mx-2 sm:mx-0"
+        className="stat-card p-2 sm:p-4 md:p-6 lg:p-8 rounded-lg mb-2 sm:mb-4 mx-1 sm:mx-2 md:mx-0 overflow-x-auto"
       >
         <div
-          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-800 dark:text-slate-400"
+          className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-slate-800 dark:text-slate-400 break-words"
         >
           ✨ Tipografia e Tamanhos de Texto
         </div>
 
-        <div className="space-y-8">
-          <div>
-            <div className="text-lg sm:text-xl font-semibold mb-3 text-primary">Mapa de Tamanhos de Texto</div>
-            <Table>
+        <div className="space-y-4 sm:space-y-6 md:space-y-8 min-w-0">
+          <div className="min-w-0 overflow-x-auto">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 sm:mb-3 text-primary">Mapa de Tamanhos de Texto</div>
+            <div className="overflow-x-auto">
+              <Table>
               <TableCaption className="text-left">
                 Tabela com exemplos visuais e recomendações de uso para diferentes tamanhos de texto.
               </TableCaption>
@@ -107,11 +108,13 @@ const TextSection = () => {
                 </TableRow>
               </TableBody>
             </Table>
+            </div>
           </div>
 
-          <div className="pt-2">
-            <div className="text-lg sm:text-xl font-semibold mb-3 text-primary">Resumo de Princípios e Benefícios</div>
-            <Table>
+          <div className="pt-2 min-w-0 overflow-x-auto">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 sm:mb-3 text-primary">Resumo de Princípios e Benefícios</div>
+            <div className="overflow-x-auto">
+              <Table>
               <TableCaption className="text-left">
                 Tabela resumo do exemplo de conteúdo misturado apresentado anteriormente.
               </TableCaption>
@@ -161,6 +164,7 @@ const TextSection = () => {
                 </TableRow>
               </TableBody>
             </Table>
+            </div>
           </div>
         </div>
       </div>

@@ -66,16 +66,16 @@ const Dashboard = () => {
         return (
           <>
             {/* Hero section */}
-            <div className="relative h-40 sm:h-48 lg:h-56 rounded-lg mb-4 sm:mb-6 overflow-hidden mx-2 sm:mx-0">
+            <div className="relative h-32 sm:h-40 md:h-48 lg:h-56 rounded-lg mb-2 sm:mb-4 overflow-hidden mx-1 sm:mx-2 md:mx-0">
               <img
               src={dashboardHero}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/40"></div>
-              <div className="relative p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">Bem-vindo ao Painel (não amigável)</div>
-                <div className="text-sm sm:text-base text-white/90">Monitore o desempenho do seu negócio com análises abrangentes</div>
+              <div className="relative p-2 sm:p-4 md:p-6 lg:p-8 flex flex-col justify-center min-w-0">
+                <div className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-0.5 sm:mb-1 break-words">Bem-vindo ao Painel (não amigável)</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90 break-words">Monitore o desempenho do seu negócio com análises abrangentes</div>
               </div>
             </div>
 
@@ -121,24 +121,24 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="lg:ml-48 min-h-screen flex flex-col">
+      <div className="lg:ml-48 xl:ml-56 min-h-screen flex flex-col w-full min-w-0">
         <DashboardHeader
           isNotificationOpen={isNotificationOpen}
           onToggleNotifications={handleToggleNotifications}
           onToggleSidebar={handleToggleSidebar}
         />
 
-        <div className="flex-1 p-3 sm:p-4 lg:p-6">
-          <div className="max-w-full overflow-hidden">
+        <div className="flex-1 p-2 sm:p-3 md:p-4 lg:p-6 overflow-x-auto">
+          <div className="max-w-full min-w-0">
             {renderContent()}
           </div>
         </div>
       </div>
 
-      <div className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 lg:right-6 stat-card p-2 sm:p-3 lg:p-4 rounded-lg z-30 shadow-lg">
+      <div className="fixed bottom-2 right-2 sm:bottom-3 sm:right-3 md:bottom-4 md:right-4 lg:right-6 stat-card p-1.5 sm:p-2 md:p-3 rounded-lg z-30 shadow-lg max-w-[calc(100vw-1rem)]">
         <div className="flex items-center gap-1 sm:gap-2">
-          <div className="w-2 h-2 bg-success-low rounded-full"></div>
-          <span className="nav-text text-xs sm:text-sm font-medium">Sistema Online</span>
+          <div className="w-2 h-2 bg-success-low rounded-full flex-shrink-0"></div>
+          <span className="nav-text text-xs sm:text-sm font-medium truncate">Sistema Online</span>
         </div>
       </div>
     </div>

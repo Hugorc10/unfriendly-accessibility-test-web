@@ -1,5 +1,5 @@
 // Video component with accessibility improvements
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import SubtitleControls from './SubtitleControls';
 import firstVideo from '../assets/videos/videoplayback1.mp4';
 import secondVideo from '../assets/videos/videoplayback2.mp4';
@@ -10,6 +10,35 @@ import firstVideoPoster from '../assets/posters/3minutos.png';
 const VideoSection = () => {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
+
+  // Limit maximum volume to 20% for all videos
+  useEffect(() => {
+    const limitVolume = (video: HTMLVideoElement) => {
+      const maxVolume = 0.2; // 20% of maximum volume
+      if (video.volume > maxVolume) {
+        video.volume = maxVolume;
+      }
+      
+      // Monitor volume changes and cap at maximum
+      const handleVolumeChange = () => {
+        if (video.volume > maxVolume) {
+          video.volume = maxVolume;
+        }
+      };
+      
+      video.addEventListener('volumechange', handleVolumeChange);
+      return () => video.removeEventListener('volumechange', handleVolumeChange);
+    };
+
+    if (video1Ref.current) {
+      video1Ref.current.volume = 0.2;
+      limitVolume(video1Ref.current);
+    }
+    if (video2Ref.current) {
+      video2Ref.current.volume = 0.2;
+      limitVolume(video2Ref.current);
+    }
+  }, []);
 
   const subtitleTracks = [
     { label: 'Português', src: "/subtitles/3-minutos.vtt", language: 'pt-BR' }

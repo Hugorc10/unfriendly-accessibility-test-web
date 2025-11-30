@@ -11,7 +11,7 @@ const AccessibleMedia = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [playbackRate, setPlaybackRate] = useState(1);
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(0.2); // Start at 20% volume
   const [showSettings, setShowSettings] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
@@ -54,7 +54,7 @@ const AccessibleMedia = () => {
   };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newVolume = parseFloat(e.target.value);
+    const newVolume = Math.min(parseFloat(e.target.value), 0.2); // Cap at 20% maximum
     setVolume(newVolume);
     if (videoRef.current) {
       videoRef.current.volume = newVolume;
@@ -70,8 +70,54 @@ const AccessibleMedia = () => {
   const handleLoadedMetadata = () => {
     if (videoRef.current) {
       setDuration(videoRef.current.duration);
+      // Limit volume to 20% maximum
+      if (videoRef.current.volume > 0.2) {
+        videoRef.current.volume = 0.2;
+        setVolume(0.2);
+      }
     }
   };
+
+  // Monitor volume changes and enforce maximum for video
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = 0.2; // Set initial volume to 20%
+      
+      const handleVolumeChange = () => {
+        if (videoRef.current && videoRef.current.volume > 0.2) {
+          videoRef.current.volume = 0.2;
+          setVolume(0.2);
+        }
+      };
+      
+      videoRef.current.addEventListener('volumechange', handleVolumeChange);
+      return () => {
+        if (videoRef.current) {
+          videoRef.current.removeEventListener('volumechange', handleVolumeChange);
+        }
+      };
+    }
+  }, []);
+
+  // Limit audio element volume to 20% maximum
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.2; // Set initial volume to 20%
+      
+      const handleAudioVolumeChange = () => {
+        if (audioRef.current && audioRef.current.volume > 0.2) {
+          audioRef.current.volume = 0.2;
+        }
+      };
+      
+      audioRef.current.addEventListener('volumechange', handleAudioVolumeChange);
+      return () => {
+        if (audioRef.current) {
+          audioRef.current.removeEventListener('volumechange', handleAudioVolumeChange);
+        }
+      };
+    }
+  }, []);
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTime = parseFloat(e.target.value);
@@ -337,8 +383,8 @@ const AccessibleMedia = () => {
                     <input
                       type="range"
                       min="0"
-                      max="1"
-                      step="0.1"
+                      max="0.2"
+                      step="0.05"
                       value={volume}
                       onChange={handleVolumeChange}
                       className="w-20 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"

@@ -276,9 +276,15 @@
   }
 
   /* Reduce spacing everywhere - make content extremely cramped */
+  /* But allow some spacing for responsive design */
   * {
     margin: 0.0625rem !important;
     padding: 0.0625rem !important;
+  }
+
+  /* Allow containers to have proper spacing */
+  .container, main, section, article, .stat-card, .p-2, .p-3, .p-4, .p-6, .p-8 {
+    margin: 0 !important;
   }
 
   /* Override for specific elements that need minimal spacing */
@@ -292,6 +298,23 @@
 
   .space-y-4 > * + *, .space-y-6 > * + *, .space-y-8 > * + * {
     margin-top: 0.125rem !important;
+  }
+
+  /* Ensure tables and wide content can scroll horizontally */
+  table {
+    min-width: 100%;
+    display: table;
+  }
+
+  /* Prevent content from being cut off */
+  .overflow-x-auto {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure flex items don't overflow */
+  .min-w-0 {
+    min-width: 0;
   }
 
   /* Make gaps smaller */

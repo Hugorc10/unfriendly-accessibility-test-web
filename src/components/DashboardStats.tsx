@@ -42,7 +42,7 @@ const DashboardStats = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 mb-2 px-1">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 mb-2 px-1 sm:px-2 min-w-0">
       {stats.map((stat, index) => {
         const Icon = stat.icon;
         const isPositive = stat.changeType === 'increase';
@@ -50,25 +50,25 @@ const DashboardStats = () => {
         return (
           <div
             key={index}
-            className="stat-card p-1 rounded shadow-sm"
+            className="stat-card p-1 rounded shadow-sm min-w-0 overflow-hidden"
           >
-            <div className="flex items-center justify-between">
-              <div className="flex-1">
-                <div className="nav-text text-xs font-light">
+            <div className="flex items-center justify-between gap-1 min-w-0">
+              <div className="flex-1 min-w-0">
+                <div className="nav-text text-xs font-light truncate">
                   {stat.title}
                 </div>
-                <div className="text-xs font-normal text-primary mt-0">
+                <div className="text-xs font-normal text-primary mt-0 truncate">
                   {stat.value}
                 </div>
                 <div
-                  className={`text-xs mt-0 flex items-center gap-0 ${
+                  className={`text-xs mt-0 flex items-center gap-0 min-w-0 ${
                     isPositive ? 'text-success-low' : 'text-danger-low'
                   }`}
                 >
-                  <span>
+                  <span className="flex-shrink-0">
                     {isPositive ? '↗' : '↘'}
                   </span>
-                  <span>{stat.change} {stat.period}</span>
+                  <span className="truncate">{stat.change} {stat.period}</span>
                 </div>
               </div>
               <Icon

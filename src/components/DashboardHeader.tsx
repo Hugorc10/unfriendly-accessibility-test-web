@@ -19,28 +19,28 @@ const DashboardHeader = ({ isNotificationOpen, onToggleNotifications, onToggleSi
   };
 
   return (
-    <div className="flex items-center justify-between p-1 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative z-50 min-h-[30px]">
-      <div className="flex items-center gap-1">
+    <div className="flex items-center justify-between p-1 sm:p-1.5 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative z-50 min-h-[30px] sm:min-h-[35px] overflow-x-auto">
+      <div className="flex items-center gap-1 min-w-0 flex-1">
         <button
-          className="lg:hidden p-1 rounded hover:bg-muted transition-colors"
+          className="lg:hidden p-1 rounded hover:bg-muted transition-colors flex-shrink-0"
           onClick={onToggleSidebar}
         >
           <Menu className="h-3 w-3 nav-text" />
         </button>
 
-        <div className="min-w-0 flex-1 mr-2">
+        <div className="min-w-0 flex-1 mr-1 sm:mr-2">
           <div className="text-xs font-light text-primary truncate">Painel de Controle</div>
-          <div className="nav-text text-xs hidden sm:block opacity-60">Bem-vindo de volta, Admin</div>
+          <div className="nav-text text-xs hidden sm:block opacity-60 truncate">Bem-vindo de volta, Admin</div>
         </div>
       </div>
 
-      <div className="flex items-center gap-1 flex-shrink-0">
-        <div className="hidden sm:flex items-center bg-input rounded px-1 py-0">
-          <Search className="h-2 w-2 nav-text mr-1" />
+      <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0">
+        <div className="hidden md:flex items-center bg-input rounded px-1 py-0 min-w-0">
+          <Search className="h-2 w-2 nav-text mr-1 flex-shrink-0" />
           <input
             type="text"
             placeholder="Pesquisar..."
-            className="bg-transparent border-none outline-none nav-text w-16 text-xs"
+            className="bg-transparent border-none outline-none nav-text w-16 sm:w-20 text-xs min-w-0"
           />
         </div>
 
@@ -62,7 +62,7 @@ const DashboardHeader = ({ isNotificationOpen, onToggleNotifications, onToggleSi
           </button>
 
           {isNotificationOpen && (
-            <div className="absolute right-0 top-full mt-1 w-64 max-w-[95vw] stat-card rounded shadow-lg z-[9999] bg-background border">
+            <div className="absolute right-0 top-full mt-1 w-64 sm:w-80 max-w-[calc(100vw-2rem)] stat-card rounded shadow-lg z-[9999] bg-background border overflow-hidden">
               <NotificationPanel />
             </div>
           )}

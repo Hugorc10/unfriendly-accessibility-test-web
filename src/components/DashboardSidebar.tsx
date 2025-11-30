@@ -31,7 +31,7 @@ const DashboardSidebar = ({ activeSection, onNavClick, id }: DashboardSidebarPro
   };
 
   return (
-    <div id={id} className="sidebar-bg w-48 h-screen p-1 flex flex-col">
+    <div id={id} className="sidebar-bg w-48 sm:w-52 md:w-56 h-screen p-1 sm:p-1.5 flex flex-col overflow-y-auto">
       <div className="mb-2 flex-shrink-0">
         <div className="text-xs font-light nav-text">AdminPanel</div>
       </div>
