@@ -7,7 +7,7 @@ const TextSection = () => {
         className="stat-card p-4 sm:p-6 lg:p-8 rounded-lg mb-4 sm:mb-6 mx-2 sm:mx-0"
       >
         <div
-          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-800 dark:text-slate-100 animate-pulse"
+          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-800 dark:text-slate-100"
         >
           ✨ Tipografia e Tamanhos de Texto
         </div>
