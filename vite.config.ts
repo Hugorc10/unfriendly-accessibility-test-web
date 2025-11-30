@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
-  // base: "/friendly-accessibility-test-web",
+  base: "/unfriendly-accessibility-test-web/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
