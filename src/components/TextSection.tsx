@@ -7,7 +7,7 @@ const TextSection = () => {
         className="stat-card p-4 sm:p-6 lg:p-8 rounded-lg mb-4 sm:mb-6 mx-2 sm:mx-0"
       >
         <div
-          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-800 dark:text-slate-100"
+          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-800 dark:text-slate-400"
         >
           ✨ Tipografia e Tamanhos de Texto
         </div>
@@ -32,7 +32,7 @@ const TextSection = () => {
                     Texto Extra Grande (XL)
                   </TableHead>
                   <TableCell className="align-top">
-                    <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-50 drop-shadow-lg cursor-default">
+                    <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-400 drop-shadow-lg cursor-default">
                       Acessibilidade Digital
                     </p>
                   </TableCell>
@@ -41,11 +41,11 @@ const TextSection = () => {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-100">
+                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-400">
                     Texto Grande (L)
                   </TableHead>
                   <TableCell className="align-top">
-                    <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-800 dark:text-slate-100 drop-shadow-sm bg-slate-50 dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-default">
+                    <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-800 dark:text-slate-400 drop-shadow-sm bg-slate-50 dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700 cursor-default">
                       Inclusão para Todos
                     </p>
                   </TableCell>
@@ -54,11 +54,11 @@ const TextSection = () => {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-100">
+                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-400">
                     Texto Médio-Grande (ML)
                   </TableHead>
                   <TableCell className="align-top">
-                    <p className="text-xl sm:text-2xl lg:text-3xl text-slate-800 dark:text-slate-100 bg-slate-50 dark:bg-slate-800 py-3 rounded cursor-default">
+                    <p className="text-xl sm:text-2xl lg:text-3xl text-slate-800 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 py-3 rounded cursor-default">
                       Tecnologia que Conecta Pessoas
                     </p>
                   </TableCell>
@@ -67,11 +67,11 @@ const TextSection = () => {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-100">
+                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-400">
                     Texto Médio (M)
                   </TableHead>
                   <TableCell className="align-top">
-                    <p className="text-lg sm:text-xl text-slate-800 dark:text-slate-100 leading-relaxed cursor-default">
+                    <p className="text-lg sm:text-xl text-slate-800 dark:text-slate-400 leading-relaxed cursor-default">
                       A acessibilidade digital não é apenas uma obrigação legal, mas uma oportunidade de criar experiências mais ricas e inclusivas para todos os usuários, independentemente de suas habilidades ou limitações.
                     </p>
                   </TableCell>
@@ -80,7 +80,7 @@ const TextSection = () => {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-100">
+                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-400">
                     Texto Pequeno (S)
                   </TableHead>
                   <TableCell className="align-top">
@@ -93,7 +93,7 @@ const TextSection = () => {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-100">
+                  <TableHead className="align-top font-semibold text-slate-900 dark:text-slate-400">
                     Texto Extra Pequeno (XS)
                   </TableHead>
                   <TableCell className="align-top">
