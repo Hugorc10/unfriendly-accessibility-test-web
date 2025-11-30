@@ -20,7 +20,8 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
-  base: "/unfriendly-accessibility-test-web/",
+  // Only use base path for production builds (GitHub Pages), not for local development
+  base: mode === 'production' ? "/unfriendly-accessibility-test-web/" : "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
