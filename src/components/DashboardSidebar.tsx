@@ -45,11 +45,11 @@ const DashboardSidebar = ({ activeSection, onNavClick, id }: DashboardSidebarPro
               <div key={item.label}>
                 <button
                   onClick={() => onNavClick(item.section)}
-                  className={`nav-text p-1 rounded transition-colors flex items-center gap-1 w-full text-left text-xs ${
+                  className={`nav-text p-1 rounded transition-colors flex items-center gap-1 w-full text-left text-2xl ${
                     isActive ? 'bg-primary/20' : 'hover:bg-primary/10'
                   }`}
                 >
-                  <Icon size={12} className="flex-shrink-0" />
+                  <Icon size={20} className="flex-shrink-0" />
                   <span className="truncate">{item.label}</span>
                 </button>
               </div>
