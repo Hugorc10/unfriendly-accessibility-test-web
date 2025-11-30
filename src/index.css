@@ -330,7 +330,7 @@
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
     font-smooth: never;
-    filter: blur(0.13px); /* Slight blur to make text harder to read */
+    filter: blur(0.1px); /* Slight blur to make text harder to read */
   }
 
   /* Add visual noise - overlapping elements and patterns */
