@@ -14,12 +14,15 @@ if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
     'Please set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.\n' +
     'For GitHub Pages, add them as secrets in repository settings.'
   );
+  throw new Error(
+    'Supabase configuration is required. Please set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY environment variables.'
+  );
 }
 
 // Create client with validation - Supabase will throw if URL is invalid
 export const supabase = createClient<Database>(
-  SUPABASE_URL || '',
-  SUPABASE_PUBLISHABLE_KEY || '',
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY,
   {
     auth: {
       storage: localStorage,
